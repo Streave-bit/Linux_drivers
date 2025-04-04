@@ -1,10 +1,23 @@
 obj-m += helloworld.o
 
-all :
-	make -C /lib/modules/$(shell uname -r)/build M=$(PWD) modules
+CPPCHECK=cppcheck
+
+KERNEL_DIR = /lib/modules/$(shell uname -r)/build
+
+all:
+	make -C $(KERNEL_DIR) M=$(PWD) modules
 
 clean:
-	make -C /lib/modules/$(shell uname -r)/build M=$(PWD) clean
+	make -C $(KERNEL_DIR) M=$(PWD) clean
+
+cppcheck:
+	@$(CPPCHECK) --quiet \
+		--enable=all \
+		--error-exitcode=1 \
+		--suppress=missingIncludeSystem \
+		--suppress=unreadVariable \
+		helloworld.c
+
 test.text : test.c 
 	cat test.c 
 	cat test.c > test.text
