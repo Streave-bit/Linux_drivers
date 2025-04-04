@@ -1,0 +1,1 @@
+cmd_/home/joseph/Documents/yocto/meta-my-layer/recipes-kernel/vled-driver/files/modules.order := {   echo /home/joseph/Documents/yocto/meta-my-layer/recipes-kernel/vled-driver/files/vled_driver.ko; :; } | awk '!x[$$0]++' - > /home/joseph/Documents/yocto/meta-my-layer/recipes-kernel/vled-driver/files/modules.order

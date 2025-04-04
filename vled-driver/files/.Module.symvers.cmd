@@ -1,0 +1,1 @@
+cmd_/home/joseph/Documents/yocto/meta-my-layer/recipes-kernel/vled-driver/files/Module.symvers := sed 's/\.ko$$/\.o/' /home/joseph/Documents/yocto/meta-my-layer/recipes-kernel/vled-driver/files/modules.order | scripts/mod/modpost -m -a  -o /home/joseph/Documents/yocto/meta-my-layer/recipes-kernel/vled-driver/files/Module.symvers -e -i Module.symvers   -T -
