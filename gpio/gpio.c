@@ -2,7 +2,7 @@
 #include <linux/init.h>
 #include <linux/proc_fs.h>
 #include <linux/uaccess.h>
-
+#include <linux/cdev.h>
 MODULE_LICENSE("GPL");
 
 static struct proc_dir_entry *custom_proc_node;
