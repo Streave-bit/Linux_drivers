@@ -1,5 +1,6 @@
 obj-m += gpio.o
-PPCHECK=cppcheck
+
+CPPCHECK=cppcheck
 
 KERNEL_DIR = /lib/modules/$(shell uname -r)/build
 
@@ -16,3 +17,4 @@ cppcheck:
 		--suppress=missingIncludeSystem \
 		--suppress=unreadVariable \
 		helloworld.c
+

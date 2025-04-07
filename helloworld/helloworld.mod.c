@@ -27,7 +27,7 @@ MODULE_INFO(retpoline, "Y");
 
 static const struct modversion_info ____versions[]
 __used __section("__versions") = {
-	{ 0xc8d01d53, "module_layout" },
+	{ 0x2c635209, "module_layout" },
 	{ 0x82d822d9, "proc_remove" },
 	{ 0x367b5b62, "proc_create" },
 	{ 0x13c49cc2, "_copy_from_user" },

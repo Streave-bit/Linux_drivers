@@ -1,0 +1,1 @@
+cmd_/home/joseph/Documents/Yocto_RISCV/helloworld/helloworld.mod := { echo  /home/joseph/Documents/Yocto_RISCV/helloworld/helloworld.o;  echo; } > /home/joseph/Documents/Yocto_RISCV/helloworld/helloworld.mod

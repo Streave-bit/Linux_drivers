@@ -1,1 +1,0 @@
-cmd_/home/joseph/Documents/yocto/meta-my-layer/recipes-kernel/uled-driver/files/modules.order := {   echo /home/joseph/Documents/yocto/meta-my-layer/recipes-kernel/uled-driver/files/uled_driver.ko; :; } | awk '!x[$$0]++' - > /home/joseph/Documents/yocto/meta-my-layer/recipes-kernel/uled-driver/files/modules.order

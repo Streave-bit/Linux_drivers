@@ -1,1 +1,0 @@
-cmd_/home/joseph/Documents/yocto/meta-my-layer/recipes-kernel/vled-driver/files/vled_driver.mod := { echo  /home/joseph/Documents/yocto/meta-my-layer/recipes-kernel/vled-driver/files/vled_driver.o;  echo; } > /home/joseph/Documents/yocto/meta-my-layer/recipes-kernel/vled-driver/files/vled_driver.mod

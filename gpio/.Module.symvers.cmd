@@ -1,0 +1,1 @@
+cmd_/home/joseph/Documents/Yocto_RISCV/gpio/Module.symvers := sed 's/\.ko$$/\.o/' /home/joseph/Documents/Yocto_RISCV/gpio/modules.order | scripts/mod/modpost -m -a  -o /home/joseph/Documents/Yocto_RISCV/gpio/Module.symvers -e -i Module.symvers   -T -
