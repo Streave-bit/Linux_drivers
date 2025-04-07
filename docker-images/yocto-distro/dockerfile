@@ -1,0 +1,9 @@
+FROM ubuntu:20.04
+
+# Install necessary packages
+
+
+#Copy the precompiled riscv distro into the docker
+COPY yocto-distro/ /yocto-image/
+WORKDIR /workspace
+ENTRYPOINT ["/bin/bash"]

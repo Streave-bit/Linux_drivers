@@ -1,1 +1,0 @@
-cmd_/home/joseph/Documents/yocto/meta-my-layer/recipes-kernel/uled-driver/files/uled_driver.mod := { echo  /home/joseph/Documents/yocto/meta-my-layer/recipes-kernel/uled-driver/files/uled_driver.o;  echo; } > /home/joseph/Documents/yocto/meta-my-layer/recipes-kernel/uled-driver/files/uled_driver.mod

@@ -1,2 +1,2 @@
-/home/joseph/Documents/Yocto_RISCV/helloworld.o
+/home/joseph/Documents/Yocto_RISCV/helloworld/helloworld.o
 
