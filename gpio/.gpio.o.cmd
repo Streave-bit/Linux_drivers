@@ -17,61 +17,166 @@ deps_/home/joseph/Documents/Yocto_RISCV/gpio/gpio.o := \
     $(wildcard include/config/RETPOLINE) \
     $(wildcard include/config/ARCH_USE_BUILTIN_BSWAP) \
     $(wildcard include/config/KCOV) \
-  include/linux/module.h \
-    $(wildcard include/config/MODULES) \
-    $(wildcard include/config/SYSFS) \
-    $(wildcard include/config/MODULES_TREE_LOOKUP) \
-    $(wildcard include/config/LIVEPATCH) \
-    $(wildcard include/config/STACKTRACE_BUILD_ID) \
+  include/linux/gpio/consumer.h \
+    $(wildcard include/config/GPIOLIB) \
+    $(wildcard include/config/OF_GPIO) \
+    $(wildcard include/config/ACPI) \
+    $(wildcard include/config/GPIO_SYSFS) \
+  include/linux/bits.h \
+  include/linux/const.h \
+  include/vdso/const.h \
+  include/uapi/linux/const.h \
+  include/vdso/bits.h \
+  arch/x86/include/uapi/asm/bitsperlong.h \
+  include/asm-generic/bitsperlong.h \
+    $(wildcard include/config/64BIT) \
+  include/uapi/asm-generic/bitsperlong.h \
+  include/linux/build_bug.h \
+  include/linux/compiler.h \
+    $(wildcard include/config/TRACE_BRANCH_PROFILING) \
+    $(wildcard include/config/PROFILE_ALL_BRANCHES) \
+    $(wildcard include/config/STACK_VALIDATION) \
     $(wildcard include/config/CFI_CLANG) \
-    $(wildcard include/config/MODULE_SIG) \
-    $(wildcard include/config/GENERIC_BUG) \
-    $(wildcard include/config/KALLSYMS) \
-    $(wildcard include/config/SMP) \
-    $(wildcard include/config/TRACEPOINTS) \
-    $(wildcard include/config/TREE_SRCU) \
-    $(wildcard include/config/BPF_EVENTS) \
-    $(wildcard include/config/DEBUG_INFO_BTF_MODULES) \
-    $(wildcard include/config/JUMP_LABEL) \
-    $(wildcard include/config/TRACING) \
-    $(wildcard include/config/EVENT_TRACING) \
-    $(wildcard include/config/FTRACE_MCOUNT_RECORD) \
-    $(wildcard include/config/KPROBES) \
-    $(wildcard include/config/HAVE_STATIC_CALL_INLINE) \
-    $(wildcard include/config/PRINTK_INDEX) \
-    $(wildcard include/config/MODULE_UNLOAD) \
-    $(wildcard include/config/CONSTRUCTORS) \
-    $(wildcard include/config/FUNCTION_ERROR_INJECTION) \
-  include/linux/list.h \
-    $(wildcard include/config/DEBUG_LIST) \
+  include/linux/compiler_types.h \
+  arch/x86/include/generated/asm/rwonce.h \
+  include/asm-generic/rwonce.h \
+  include/linux/kasan-checks.h \
+    $(wildcard include/config/KASAN_GENERIC) \
+    $(wildcard include/config/KASAN_SW_TAGS) \
   include/linux/types.h \
     $(wildcard include/config/HAVE_UID16) \
     $(wildcard include/config/UID16) \
     $(wildcard include/config/ARCH_DMA_ADDR_T_64BIT) \
     $(wildcard include/config/PHYS_ADDR_T_64BIT) \
-    $(wildcard include/config/64BIT) \
     $(wildcard include/config/ARCH_32BIT_USTAT_F_TINODE) \
   include/uapi/linux/types.h \
   arch/x86/include/generated/uapi/asm/types.h \
   include/uapi/asm-generic/types.h \
   include/asm-generic/int-ll64.h \
   include/uapi/asm-generic/int-ll64.h \
-  arch/x86/include/uapi/asm/bitsperlong.h \
-  include/asm-generic/bitsperlong.h \
-  include/uapi/asm-generic/bitsperlong.h \
   include/uapi/linux/posix_types.h \
   include/linux/stddef.h \
   include/uapi/linux/stddef.h \
-  include/linux/compiler_types.h \
   arch/x86/include/asm/posix_types.h \
     $(wildcard include/config/X86_32) \
   arch/x86/include/uapi/asm/posix_types_64.h \
   include/uapi/asm-generic/posix_types.h \
+  include/linux/kcsan-checks.h \
+    $(wildcard include/config/KCSAN) \
+    $(wildcard include/config/KCSAN_IGNORE_ATOMICS) \
+  include/linux/bug.h \
+    $(wildcard include/config/GENERIC_BUG) \
+    $(wildcard include/config/BUG_ON_DATA_CORRUPTION) \
+  arch/x86/include/asm/bug.h \
+    $(wildcard include/config/DEBUG_BUGVERBOSE) \
+  include/linux/stringify.h \
+  include/linux/instrumentation.h \
+    $(wildcard include/config/DEBUG_ENTRY) \
+  include/asm-generic/bug.h \
+    $(wildcard include/config/BUG) \
+    $(wildcard include/config/GENERIC_BUG_RELATIVE_POINTERS) \
+    $(wildcard include/config/SMP) \
+    $(wildcard include/config/MODULES) \
+  include/linux/once_lite.h \
+  include/linux/panic.h \
+    $(wildcard include/config/PANIC_TIMEOUT) \
+  include/linux/printk.h \
+    $(wildcard include/config/MESSAGE_LOGLEVEL_DEFAULT) \
+    $(wildcard include/config/CONSOLE_LOGLEVEL_DEFAULT) \
+    $(wildcard include/config/CONSOLE_LOGLEVEL_QUIET) \
+    $(wildcard include/config/EARLY_PRINTK) \
+    $(wildcard include/config/PRINTK) \
+    $(wildcard include/config/PRINTK_INDEX) \
+    $(wildcard include/config/DYNAMIC_DEBUG) \
+    $(wildcard include/config/DYNAMIC_DEBUG_CORE) \
+  include/linux/stdarg.h \
+  include/linux/init.h \
+    $(wildcard include/config/HAVE_ARCH_PREL32_RELOCATIONS) \
+    $(wildcard include/config/STRICT_KERNEL_RWX) \
+    $(wildcard include/config/STRICT_MODULE_RWX) \
+    $(wildcard include/config/LTO_CLANG) \
+  include/linux/kern_levels.h \
+  include/linux/linkage.h \
+    $(wildcard include/config/FUNCTION_ALIGNMENT) \
+    $(wildcard include/config/ARCH_USE_SYM_ANNOTATIONS) \
+  include/linux/export.h \
+    $(wildcard include/config/MODVERSIONS) \
+    $(wildcard include/config/MODULE_REL_CRCS) \
+    $(wildcard include/config/TRIM_UNUSED_KSYMS) \
+  arch/x86/include/asm/linkage.h \
+    $(wildcard include/config/RETHUNK) \
+    $(wildcard include/config/SLS) \
+  include/linux/cache.h \
+    $(wildcard include/config/ARCH_HAS_CACHE_LINE_SIZE) \
+  include/uapi/linux/kernel.h \
+  include/uapi/linux/sysinfo.h \
+  arch/x86/include/asm/cache.h \
+    $(wildcard include/config/X86_L1_CACHE_SHIFT) \
+    $(wildcard include/config/X86_INTERNODE_CACHE_SHIFT) \
+    $(wildcard include/config/X86_VSMP) \
+  include/linux/ratelimit_types.h \
+  include/uapi/linux/param.h \
+  arch/x86/include/generated/uapi/asm/param.h \
+  include/asm-generic/param.h \
+    $(wildcard include/config/HZ) \
+  include/uapi/asm-generic/param.h \
+  include/linux/spinlock_types.h \
+    $(wildcard include/config/PREEMPT_RT) \
+    $(wildcard include/config/DEBUG_LOCK_ALLOC) \
+  include/linux/spinlock_types_raw.h \
+    $(wildcard include/config/DEBUG_SPINLOCK) \
+  arch/x86/include/asm/spinlock_types.h \
+  include/asm-generic/qspinlock_types.h \
+    $(wildcard include/config/NR_CPUS) \
+  include/asm-generic/qrwlock_types.h \
+  arch/x86/include/uapi/asm/byteorder.h \
+  include/linux/byteorder/little_endian.h \
+  include/uapi/linux/byteorder/little_endian.h \
+  include/linux/swab.h \
+  include/uapi/linux/swab.h \
+  arch/x86/include/uapi/asm/swab.h \
+  include/linux/byteorder/generic.h \
+  include/linux/lockdep_types.h \
+    $(wildcard include/config/PROVE_RAW_LOCK_NESTING) \
+    $(wildcard include/config/PREEMPT_LOCK) \
+    $(wildcard include/config/LOCKDEP) \
+    $(wildcard include/config/LOCK_STAT) \
+  include/linux/rwlock_types.h \
+  include/linux/dynamic_debug.h \
+    $(wildcard include/config/JUMP_LABEL) \
+  include/linux/jump_label.h \
+    $(wildcard include/config/HAVE_ARCH_JUMP_LABEL_RELATIVE) \
+  arch/x86/include/asm/jump_label.h \
+  arch/x86/include/asm/asm.h \
+    $(wildcard include/config/KPROBES) \
+  arch/x86/include/asm/extable_fixup_types.h \
+  arch/x86/include/asm/nops.h \
+  include/linux/err.h \
+  arch/x86/include/generated/uapi/asm/errno.h \
+  include/uapi/asm-generic/errno.h \
+  include/uapi/asm-generic/errno-base.h \
+  include/linux/module.h \
+    $(wildcard include/config/SYSFS) \
+    $(wildcard include/config/MODULES_TREE_LOOKUP) \
+    $(wildcard include/config/LIVEPATCH) \
+    $(wildcard include/config/STACKTRACE_BUILD_ID) \
+    $(wildcard include/config/MODULE_SIG) \
+    $(wildcard include/config/KALLSYMS) \
+    $(wildcard include/config/TRACEPOINTS) \
+    $(wildcard include/config/TREE_SRCU) \
+    $(wildcard include/config/BPF_EVENTS) \
+    $(wildcard include/config/DEBUG_INFO_BTF_MODULES) \
+    $(wildcard include/config/TRACING) \
+    $(wildcard include/config/EVENT_TRACING) \
+    $(wildcard include/config/FTRACE_MCOUNT_RECORD) \
+    $(wildcard include/config/HAVE_STATIC_CALL_INLINE) \
+    $(wildcard include/config/MODULE_UNLOAD) \
+    $(wildcard include/config/CONSTRUCTORS) \
+    $(wildcard include/config/FUNCTION_ERROR_INJECTION) \
+  include/linux/list.h \
+    $(wildcard include/config/DEBUG_LIST) \
   include/linux/poison.h \
     $(wildcard include/config/ILLEGAL_POINTER_VALUE) \
-  include/linux/const.h \
-  include/vdso/const.h \
-  include/uapi/linux/const.h \
   include/linux/kernel.h \
     $(wildcard include/config/PREEMPT_VOLUNTARY) \
     $(wildcard include/config/PREEMPT_DYNAMIC) \
@@ -79,52 +184,19 @@ deps_/home/joseph/Documents/Yocto_RISCV/gpio/gpio.o := \
     $(wildcard include/config/DEBUG_ATOMIC_SLEEP) \
     $(wildcard include/config/MMU) \
     $(wildcard include/config/PROVE_LOCKING) \
-  include/linux/stdarg.h \
   include/linux/align.h \
   include/linux/limits.h \
   include/uapi/linux/limits.h \
   include/vdso/limits.h \
-  include/linux/linkage.h \
-    $(wildcard include/config/FUNCTION_ALIGNMENT) \
-    $(wildcard include/config/ARCH_USE_SYM_ANNOTATIONS) \
-  include/linux/stringify.h \
-  include/linux/export.h \
-    $(wildcard include/config/MODVERSIONS) \
-    $(wildcard include/config/MODULE_REL_CRCS) \
-    $(wildcard include/config/HAVE_ARCH_PREL32_RELOCATIONS) \
-    $(wildcard include/config/TRIM_UNUSED_KSYMS) \
-  include/linux/compiler.h \
-    $(wildcard include/config/TRACE_BRANCH_PROFILING) \
-    $(wildcard include/config/PROFILE_ALL_BRANCHES) \
-    $(wildcard include/config/STACK_VALIDATION) \
-  arch/x86/include/generated/asm/rwonce.h \
-  include/asm-generic/rwonce.h \
-  include/linux/kasan-checks.h \
-    $(wildcard include/config/KASAN_GENERIC) \
-    $(wildcard include/config/KASAN_SW_TAGS) \
-  include/linux/kcsan-checks.h \
-    $(wildcard include/config/KCSAN) \
-    $(wildcard include/config/KCSAN_IGNORE_ATOMICS) \
-  arch/x86/include/asm/linkage.h \
-    $(wildcard include/config/RETHUNK) \
-    $(wildcard include/config/SLS) \
   include/linux/bitops.h \
-  include/linux/bits.h \
-  include/vdso/bits.h \
-  include/linux/build_bug.h \
   include/linux/typecheck.h \
-  include/uapi/linux/kernel.h \
-  include/uapi/linux/sysinfo.h \
   arch/x86/include/asm/bitops.h \
     $(wildcard include/config/X86_64) \
     $(wildcard include/config/X86_CMOV) \
   arch/x86/include/asm/alternative.h \
-  arch/x86/include/asm/asm.h \
-  arch/x86/include/asm/extable_fixup_types.h \
   arch/x86/include/asm/rmwcc.h \
     $(wildcard include/config/CC_HAS_ASM_GOTO) \
   arch/x86/include/asm/barrier.h \
-  arch/x86/include/asm/nops.h \
   include/asm-generic/barrier.h \
   include/asm-generic/bitops/find.h \
     $(wildcard include/config/GENERIC_FIND_FIRST_BIT) \
@@ -155,13 +227,6 @@ deps_/home/joseph/Documents/Yocto_RISCV/gpio/gpio.o := \
     $(wildcard include/config/KCSAN_ASSUME_PLAIN_WRITES_ATOMIC) \
   include/asm-generic/bitops/instrumented-lock.h \
   include/asm-generic/bitops/le.h \
-  arch/x86/include/uapi/asm/byteorder.h \
-  include/linux/byteorder/little_endian.h \
-  include/uapi/linux/byteorder/little_endian.h \
-  include/linux/swab.h \
-  include/uapi/linux/swab.h \
-  arch/x86/include/uapi/asm/swab.h \
-  include/linux/byteorder/generic.h \
   include/asm-generic/bitops/ext2-atomic-setbit.h \
   include/linux/kstrtox.h \
   include/linux/log2.h \
@@ -171,53 +236,6 @@ deps_/home/joseph/Documents/Yocto_RISCV/gpio/gpio.o := \
   arch/x86/include/asm/div64.h \
   include/asm-generic/div64.h \
   include/linux/minmax.h \
-  include/linux/panic.h \
-    $(wildcard include/config/PANIC_TIMEOUT) \
-  include/linux/printk.h \
-    $(wildcard include/config/MESSAGE_LOGLEVEL_DEFAULT) \
-    $(wildcard include/config/CONSOLE_LOGLEVEL_DEFAULT) \
-    $(wildcard include/config/CONSOLE_LOGLEVEL_QUIET) \
-    $(wildcard include/config/EARLY_PRINTK) \
-    $(wildcard include/config/PRINTK) \
-    $(wildcard include/config/DYNAMIC_DEBUG) \
-    $(wildcard include/config/DYNAMIC_DEBUG_CORE) \
-  include/linux/init.h \
-    $(wildcard include/config/STRICT_KERNEL_RWX) \
-    $(wildcard include/config/STRICT_MODULE_RWX) \
-    $(wildcard include/config/LTO_CLANG) \
-  include/linux/kern_levels.h \
-  include/linux/cache.h \
-    $(wildcard include/config/ARCH_HAS_CACHE_LINE_SIZE) \
-  arch/x86/include/asm/cache.h \
-    $(wildcard include/config/X86_L1_CACHE_SHIFT) \
-    $(wildcard include/config/X86_INTERNODE_CACHE_SHIFT) \
-    $(wildcard include/config/X86_VSMP) \
-  include/linux/ratelimit_types.h \
-  include/uapi/linux/param.h \
-  arch/x86/include/generated/uapi/asm/param.h \
-  include/asm-generic/param.h \
-    $(wildcard include/config/HZ) \
-  include/uapi/asm-generic/param.h \
-  include/linux/spinlock_types.h \
-    $(wildcard include/config/PREEMPT_RT) \
-    $(wildcard include/config/DEBUG_LOCK_ALLOC) \
-  include/linux/spinlock_types_raw.h \
-    $(wildcard include/config/DEBUG_SPINLOCK) \
-  arch/x86/include/asm/spinlock_types.h \
-  include/asm-generic/qspinlock_types.h \
-    $(wildcard include/config/NR_CPUS) \
-  include/asm-generic/qrwlock_types.h \
-  include/linux/lockdep_types.h \
-    $(wildcard include/config/PROVE_RAW_LOCK_NESTING) \
-    $(wildcard include/config/PREEMPT_LOCK) \
-    $(wildcard include/config/LOCKDEP) \
-    $(wildcard include/config/LOCK_STAT) \
-  include/linux/rwlock_types.h \
-  include/linux/once_lite.h \
-  include/linux/dynamic_debug.h \
-  include/linux/jump_label.h \
-    $(wildcard include/config/HAVE_ARCH_JUMP_LABEL_RELATIVE) \
-  arch/x86/include/asm/jump_label.h \
   include/linux/static_call_types.h \
     $(wildcard include/config/HAVE_STATIC_CALL) \
   include/linux/stat.h \
@@ -335,9 +353,6 @@ deps_/home/joseph/Documents/Yocto_RISCV/gpio/gpio.o := \
   include/asm-generic/getorder.h \
   arch/x86/include/asm/msr.h \
   arch/x86/include/asm/msr-index.h \
-  arch/x86/include/generated/uapi/asm/errno.h \
-  include/uapi/asm-generic/errno.h \
-  include/uapi/asm-generic/errno-base.h \
   arch/x86/include/asm/cpumask.h \
   include/linux/cpumask.h \
     $(wildcard include/config/CPUMASK_OFFSTACK) \
@@ -347,7 +362,6 @@ deps_/home/joseph/Documents/Yocto_RISCV/gpio/gpio.o := \
   include/linux/string.h \
     $(wildcard include/config/BINARY_PRINTF) \
     $(wildcard include/config/FORTIFY_SOURCE) \
-  include/linux/err.h \
   include/linux/errno.h \
   include/uapi/linux/errno.h \
   include/linux/overflow.h \
@@ -365,15 +379,6 @@ deps_/home/joseph/Documents/Yocto_RISCV/gpio/gpio.o := \
     $(wildcard include/config/GENERIC_ATOMIC64) \
   include/linux/atomic/atomic-long.h \
   include/linux/atomic/atomic-instrumented.h \
-  include/linux/bug.h \
-    $(wildcard include/config/BUG_ON_DATA_CORRUPTION) \
-  arch/x86/include/asm/bug.h \
-    $(wildcard include/config/DEBUG_BUGVERBOSE) \
-  include/linux/instrumentation.h \
-    $(wildcard include/config/DEBUG_ENTRY) \
-  include/asm-generic/bug.h \
-    $(wildcard include/config/BUG) \
-    $(wildcard include/config/GENERIC_BUG_RELATIVE_POINTERS) \
   arch/x86/include/uapi/asm/msr.h \
   include/linux/tracepoint-defs.h \
   arch/x86/include/asm/paravirt.h \
@@ -668,234 +673,6 @@ deps_/home/joseph/Documents/Yocto_RISCV/gpio/gpio.o := \
     $(wildcard include/config/MODULES_USE_ELF_REL) \
     $(wildcard include/config/MODULES_USE_ELF_RELA) \
   arch/x86/include/asm/orc_types.h \
-  include/linux/proc_fs.h \
-    $(wildcard include/config/PROC_PID_ARCH_STATUS) \
-  include/linux/fs.h \
-    $(wildcard include/config/READ_ONLY_THP_FOR_FS) \
-    $(wildcard include/config/FS_POSIX_ACL) \
-    $(wildcard include/config/SECURITY) \
-    $(wildcard include/config/CGROUP_WRITEBACK) \
-    $(wildcard include/config/IMA) \
-    $(wildcard include/config/FILE_LOCKING) \
-    $(wildcard include/config/FSNOTIFY) \
-    $(wildcard include/config/FS_ENCRYPTION) \
-    $(wildcard include/config/FS_VERITY) \
-    $(wildcard include/config/EPOLL) \
-    $(wildcard include/config/UNICODE) \
-    $(wildcard include/config/QUOTA) \
-    $(wildcard include/config/BLK_DEV_LOOP) \
-    $(wildcard include/config/FS_DAX) \
-    $(wildcard include/config/BLOCK) \
-    $(wildcard include/config/MIGRATION) \
-  include/linux/wait_bit.h \
-  include/linux/kdev_t.h \
-  include/uapi/linux/kdev_t.h \
-  include/linux/dcache.h \
-  include/linux/rculist.h \
-    $(wildcard include/config/PROVE_RCU_LIST) \
-  include/linux/rculist_bl.h \
-  include/linux/list_bl.h \
-  include/linux/bit_spinlock.h \
-  include/linux/lockref.h \
-    $(wildcard include/config/ARCH_USE_CMPXCHG_LOCKREF) \
-  include/linux/stringhash.h \
-    $(wildcard include/config/DCACHE_WORD_ACCESS) \
-  include/linux/hash.h \
-    $(wildcard include/config/HAVE_ARCH_HASH) \
-  include/linux/path.h \
-  include/linux/list_lru.h \
-    $(wildcard include/config/MEMCG_KMEM) \
-  include/linux/shrinker.h \
-  include/linux/pid.h \
-  include/linux/capability.h \
-  include/uapi/linux/capability.h \
-  include/linux/semaphore.h \
-  include/linux/fcntl.h \
-    $(wildcard include/config/ARCH_32BIT_OFF_T) \
-  include/uapi/linux/fcntl.h \
-  arch/x86/include/generated/uapi/asm/fcntl.h \
-  include/uapi/asm-generic/fcntl.h \
-  include/uapi/linux/openat2.h \
-  include/linux/migrate_mode.h \
-  include/linux/percpu-rwsem.h \
-  include/linux/rcuwait.h \
-  include/linux/sched/signal.h \
-    $(wildcard include/config/SCHED_AUTOGROUP) \
-    $(wildcard include/config/BSD_PROCESS_ACCT) \
-    $(wildcard include/config/TASKSTATS) \
-    $(wildcard include/config/AUDIT) \
-    $(wildcard include/config/STACK_GROWSUP) \
-  include/linux/signal.h \
-    $(wildcard include/config/DYNAMIC_SIGFRAME) \
-  include/linux/signal_types.h \
-    $(wildcard include/config/OLD_SIGACTION) \
-  include/uapi/linux/signal.h \
-  arch/x86/include/asm/signal.h \
-  arch/x86/include/uapi/asm/signal.h \
-  include/uapi/asm-generic/signal-defs.h \
-  arch/x86/include/uapi/asm/siginfo.h \
-  include/uapi/asm-generic/siginfo.h \
-  include/linux/sched.h \
-    $(wildcard include/config/VIRT_CPU_ACCOUNTING_NATIVE) \
-    $(wildcard include/config/SCHED_INFO) \
-    $(wildcard include/config/SCHEDSTATS) \
-    $(wildcard include/config/FAIR_GROUP_SCHED) \
-    $(wildcard include/config/RT_GROUP_SCHED) \
-    $(wildcard include/config/RT_MUTEXES) \
-    $(wildcard include/config/UCLAMP_TASK) \
-    $(wildcard include/config/UCLAMP_BUCKETS_COUNT) \
-    $(wildcard include/config/KMAP_LOCAL) \
-    $(wildcard include/config/SCHED_CORE) \
-    $(wildcard include/config/CGROUP_SCHED) \
-    $(wildcard include/config/BLK_DEV_IO_TRACE) \
-    $(wildcard include/config/PSI) \
-    $(wildcard include/config/COMPAT_BRK) \
-    $(wildcard include/config/CGROUPS) \
-    $(wildcard include/config/BLK_CGROUP) \
-    $(wildcard include/config/PAGE_OWNER) \
-    $(wildcard include/config/EVENTFD) \
-    $(wildcard include/config/ARCH_HAS_SCALED_CPUTIME) \
-    $(wildcard include/config/VIRT_CPU_ACCOUNTING_GEN) \
-    $(wildcard include/config/POSIX_CPUTIMERS) \
-    $(wildcard include/config/POSIX_CPU_TIMERS_TASK_WORK) \
-    $(wildcard include/config/KEYS) \
-    $(wildcard include/config/SYSVIPC) \
-    $(wildcard include/config/DETECT_HUNG_TASK) \
-    $(wildcard include/config/IO_URING) \
-    $(wildcard include/config/AUDITSYSCALL) \
-    $(wildcard include/config/UBSAN) \
-    $(wildcard include/config/UBSAN_TRAP) \
-    $(wildcard include/config/TASK_XACCT) \
-    $(wildcard include/config/CPUSETS) \
-    $(wildcard include/config/X86_CPU_RESCTRL) \
-    $(wildcard include/config/FUTEX) \
-    $(wildcard include/config/PERF_EVENTS) \
-    $(wildcard include/config/RSEQ) \
-    $(wildcard include/config/TASK_DELAY_ACCT) \
-    $(wildcard include/config/FAULT_INJECTION) \
-    $(wildcard include/config/LATENCYTOP) \
-    $(wildcard include/config/KUNIT) \
-    $(wildcard include/config/FUNCTION_GRAPH_TRACER) \
-    $(wildcard include/config/BCACHE) \
-    $(wildcard include/config/VMAP_STACK) \
-    $(wildcard include/config/BPF_SYSCALL) \
-    $(wildcard include/config/GCC_PLUGIN_STACKLEAK) \
-    $(wildcard include/config/X86_MCE) \
-    $(wildcard include/config/KRETPROBES) \
-    $(wildcard include/config/ARCH_HAS_PARANOID_L1D_FLUSH) \
-    $(wildcard include/config/ARCH_TASK_STRUCT_ON_STACK) \
-    $(wildcard include/config/DEBUG_RSEQ) \
-  include/uapi/linux/sched.h \
-  include/linux/sem.h \
-  include/uapi/linux/sem.h \
-  include/linux/ipc.h \
-  include/linux/rhashtable-types.h \
-  include/uapi/linux/ipc.h \
-  arch/x86/include/generated/uapi/asm/ipcbuf.h \
-  include/uapi/asm-generic/ipcbuf.h \
-  arch/x86/include/uapi/asm/sembuf.h \
-  include/linux/shm.h \
-  include/uapi/linux/shm.h \
-  include/uapi/asm-generic/hugetlb_encode.h \
-  arch/x86/include/uapi/asm/shmbuf.h \
-  include/uapi/asm-generic/shmbuf.h \
-  arch/x86/include/asm/shmparam.h \
-  include/linux/plist.h \
-    $(wildcard include/config/DEBUG_PLIST) \
-  include/linux/hrtimer.h \
-    $(wildcard include/config/HIGH_RES_TIMERS) \
-    $(wildcard include/config/TIME_LOW_RES) \
-    $(wildcard include/config/TIMERFD) \
-  include/linux/hrtimer_defs.h \
-  include/linux/timerqueue.h \
-  include/linux/seccomp.h \
-    $(wildcard include/config/SECCOMP) \
-    $(wildcard include/config/HAVE_ARCH_SECCOMP_FILTER) \
-    $(wildcard include/config/SECCOMP_FILTER) \
-    $(wildcard include/config/CHECKPOINT_RESTORE) \
-    $(wildcard include/config/SECCOMP_CACHE_DEBUG) \
-  include/uapi/linux/seccomp.h \
-  arch/x86/include/asm/seccomp.h \
-  arch/x86/include/asm/unistd.h \
-  arch/x86/include/uapi/asm/unistd.h \
-  arch/x86/include/generated/uapi/asm/unistd_64.h \
-  arch/x86/include/generated/asm/unistd_64_x32.h \
-  arch/x86/include/generated/asm/unistd_32_ia32.h \
-  arch/x86/include/asm/ia32_unistd.h \
-  include/asm-generic/seccomp.h \
-  include/uapi/linux/unistd.h \
-  include/linux/resource.h \
-  include/uapi/linux/resource.h \
-  arch/x86/include/generated/uapi/asm/resource.h \
-  include/asm-generic/resource.h \
-  include/uapi/asm-generic/resource.h \
-  include/linux/latencytop.h \
-  include/linux/sched/prio.h \
-  include/linux/sched/types.h \
-  include/linux/syscall_user_dispatch.h \
-  include/linux/task_io_accounting.h \
-    $(wildcard include/config/TASK_IO_ACCOUNTING) \
-  include/linux/posix-timers.h \
-  include/linux/alarmtimer.h \
-    $(wildcard include/config/RTC_CLASS) \
-  include/linux/task_work.h \
-  include/uapi/linux/rseq.h \
-  include/linux/kcsan.h \
-  arch/x86/include/generated/asm/kmap_size.h \
-  include/asm-generic/kmap_size.h \
-    $(wildcard include/config/DEBUG_KMAP_LOCAL) \
-  include/linux/sched/jobctl.h \
-  include/linux/sched/task.h \
-    $(wildcard include/config/HAVE_EXIT_THREAD) \
-    $(wildcard include/config/ARCH_WANTS_DYNAMIC_TASK_STRUCT) \
-    $(wildcard include/config/HAVE_ARCH_THREAD_STRUCT_WHITELIST) \
-  include/linux/uaccess.h \
-    $(wildcard include/config/SET_FS) \
-  include/linux/fault-inject-usercopy.h \
-    $(wildcard include/config/FAULT_INJECTION_USERCOPY) \
-  arch/x86/include/asm/uaccess.h \
-    $(wildcard include/config/CC_HAS_ASM_GOTO_OUTPUT) \
-    $(wildcard include/config/CC_HAS_ASM_GOTO_TIED_OUTPUT) \
-    $(wildcard include/config/ARCH_HAS_COPY_MC) \
-    $(wildcard include/config/X86_INTEL_USERCOPY) \
-  arch/x86/include/asm/smap.h \
-  arch/x86/include/asm/extable.h \
-    $(wildcard include/config/BPF_JIT) \
-  arch/x86/include/asm/uaccess_64.h \
-  include/linux/cred.h \
-    $(wildcard include/config/DEBUG_CREDENTIALS) \
-  include/linux/key.h \
-    $(wildcard include/config/KEY_NOTIFICATIONS) \
-    $(wildcard include/config/NET) \
-  include/linux/assoc_array.h \
-    $(wildcard include/config/ASSOCIATIVE_ARRAY) \
-  include/linux/sched/user.h \
-    $(wildcard include/config/VFIO_PCI_ZDEV_KVM) \
-    $(wildcard include/config/WATCH_QUEUE) \
-  include/linux/percpu_counter.h \
-  include/linux/ratelimit.h \
-  include/linux/rcu_sync.h \
-  include/linux/delayed_call.h \
-  include/linux/uuid.h \
-  include/uapi/linux/uuid.h \
-  include/linux/errseq.h \
-  include/linux/ioprio.h \
-  include/linux/sched/rt.h \
-  include/linux/iocontext.h \
-  include/uapi/linux/ioprio.h \
-  include/linux/fs_types.h \
-  include/linux/mount.h \
-  include/linux/mnt_idmapping.h \
-  include/uapi/linux/fs.h \
-  include/linux/quota.h \
-    $(wildcard include/config/QUOTA_NETLINK_INTERFACE) \
-  include/uapi/linux/dqblk_xfs.h \
-  include/linux/dqblk_v1.h \
-  include/linux/dqblk_v2.h \
-  include/linux/dqblk_qtree.h \
-  include/linux/projid.h \
-  include/uapi/linux/quota.h \
-  include/linux/nfs_fs_i.h \
 
 /home/joseph/Documents/Yocto_RISCV/gpio/gpio.o: $(deps_/home/joseph/Documents/Yocto_RISCV/gpio/gpio.o)
 

@@ -1,61 +1,68 @@
-#include <linux/cdev.h>
-#include <linux/init.h>
-#include <linux/module.h>
-#include <linux/proc_fs.h>
-#include <linux/uaccess.h>
+#include <linux/gpio/consumer.h> // For GPIO manipulation
+#include <linux/init.h>          // For module initialization
+#include <linux/module.h>        // For module functions
+
+// Declare GPIO descriptors for LED and button
+static struct gpio_desc *led, *button;
+
+// Define GPIO pin numbers
+#define IO_LED1 21
+#define IO_BUTTON1 20
+
+// GPIO offset (useful if needed, otherwise can be 0)
+#define IO_OFFSET 0
+
+// Initialization function for the module
+static int __init my_init(void) {
+  int status;
+
+  // Initialize LED GPIO pin
+  led = gpio_to_desc(IO_LED1 + IO_OFFSET);
+  if (!led) {
+    printk("gpioctrl - Error with pin 21\n");
+    return -ENODEV; // Return error if the LED pin is invalid
+  }
+
+  // Initialize button GPIO pin
+  button = gpio_to_desc(IO_BUTTON1 + IO_OFFSET);
+  if (!button) {
+    printk("gpioctrl - Error with pin 20\n");
+    return -ENODEV; // Return error if the button pin is invalid
+  }
+
+  // Set LED pin as output
+  status = gpiod_direction_output(led, 0);
+  if (status) {
+    printk("gpioctrl - Error setting pin 21 as output\n");
+    return status; // Return error if setting the LED pin as output fails
+  }
+
+  // Set button pin as input
+  status = gpiod_direction_input(button);
+  if (status) {
+    printk("gpioctrl - Error setting pin 20 as input\n");
+    return status; // Return error if setting the button pin as input fails
+  }
+
+  // Turn on the LED
+  gpiod_set_value(led, 1);
+
+  // Print button status (pressed or not)
+  printk("gpioctrl - Button is %spressed\n",
+         gpiod_get_value(button) ? "" : "not ");
+
+  return 0; // Everything went fine
+}
+
+// Exit function for the module
+static void __exit my_exit(void) {
+  gpiod_set_value(led, 0); // Turn off the LED
+}
+
+// Initialize and clean up the module
+module_init(my_init);
+module_exit(my_exit);
+
+// Module metadata
 MODULE_LICENSE("GPL");
-
-static struct proc_dir_entry *custom_proc_node;
-struct proc_ops driver_proc_ops;
-static char msg[] = "";
-
-static ssize_t hello_driver_read(struct file *file_pointer,
-                                 char *user_space_buffer, size_t count,
-                                 loff_t *offset)
-
-{
-  int result;
-  ssize_t len = strlen(msg);
-  if (*offset >= len) {
-    return 0;
-  }
-  result = copy_to_user(user_space_buffer, msg, len);
-  *offset += len;
-  printk("helloworld read\n");
-
-  return len;
-}
-
-static ssize_t hello_driver_write(struct file *file_pointer,
-                                  const char *user_space_buffer, size_t count,
-                                  loff_t *offset) {
-  int result;
-  ssize_t len = strlen(msg);
-  result = copy_from_user(msg, user_space_buffer, len);
-  if (*offset >= len) {
-    return 0;
-  }
-  *offset += len;
-  printk("helloworld write\n");
-
-  return len;
-}
-
-struct proc_ops hello_driver_ops = {.proc_read = hello_driver_read,
-                                    .proc_write = hello_driver_write};
-
-static int helloworld_int(void) {
-  printk("We are ine the driver");
-  custom_proc_node = proc_create("hello_driver", 0, NULL, &hello_driver_ops);
-  printk("Driver created");
-  return 0;
-}
-
-static void helloworld_exit(void) {
-  printk("We are existing the driver");
-  proc_remove(custom_proc_node);
-  printk("Bye");
-}
-
-module_init(helloworld_int);
-module_exit(helloworld_exit);
+MODULE_DESCRIPTION("Example for using GPIOs without a device tree");
