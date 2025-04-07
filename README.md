@@ -15,7 +15,7 @@ A simple GPIO driver that uses raw GPIO numbers to configure:
 - One pin as an input (Button)  
 It prints the button state and toggles the LED during initialization.
 
-### 3. `procfs-driver/` - Proc Filesystem Interface
+### 3. `helloworld-driver/` - Proc Filesystem Interface
 A lightweight driver that creates a custom `/proc/hello_driver` node.  
 It supports reading and writing basic strings to and from user space using the procfs interface.
 
