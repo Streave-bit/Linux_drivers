@@ -28,18 +28,17 @@ MODULE_INFO(retpoline, "Y");
 static const struct modversion_info ____versions[]
 __used __section("__versions") = {
 	{ 0x2c635209, "module_layout" },
-	{ 0x82d822d9, "proc_remove" },
-	{ 0x367b5b62, "proc_create" },
-	{ 0x13c49cc2, "_copy_from_user" },
-	{ 0x92997ed8, "_printk" },
-	{ 0x6b10bee1, "_copy_to_user" },
-	{ 0xcbd4898c, "fortify_panic" },
 	{ 0x5b8239ca, "__x86_return_thunk" },
-	{ 0xa916b694, "strnlen" },
+	{ 0x49b1a9e8, "gpiod_get_value" },
+	{ 0xd3567596, "gpiod_set_value" },
+	{ 0xdb92e469, "gpiod_direction_input" },
+	{ 0x85bb1c81, "gpiod_direction_output" },
+	{ 0x92997ed8, "_printk" },
+	{ 0xd7be8952, "gpio_to_desc" },
 	{ 0xbdfb6dbb, "__fentry__" },
 };
 
 MODULE_INFO(depends, "");
 
 
-MODULE_INFO(srcversion, "24B44BEE80B6647081A4BD8");
+MODULE_INFO(srcversion, "90EEE926627416D8B81650F");

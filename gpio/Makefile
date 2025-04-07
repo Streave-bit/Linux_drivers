@@ -16,7 +16,6 @@ cppcheck:
 		--enable=all \
 		--error-exitcode=1 \
 		--suppress=missingIncludeSystem \
-		--suppress=unreadVariable \
 		gpio.c
 format:
 	@$(FORMAT) -i gpio.c
