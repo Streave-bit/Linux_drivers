@@ -1,6 +1,7 @@
 obj-m += gpio.o
 
-CPPCHECK=cppcheck
+CPPCHECK = cppcheck
+FORMAT = clang-format
 
 KERNEL_DIR = /lib/modules/$(shell uname -r)/build
 
@@ -17,4 +18,5 @@ cppcheck:
 		--suppress=missingIncludeSystem \
 		--suppress=unreadVariable \
 		gpio.c
-
+format:
+	@$(FORMAT) -i gpio.c
