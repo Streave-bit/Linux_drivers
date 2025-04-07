@@ -3,11 +3,13 @@ jobs:
   build_and_static_analysis:
     runs-on: ubuntu-latest
     container:
-      image: streave/riscv-qemu:base
+      image: streave/riscv-qemu:basev3
     steps:
-      -name: Checkout the reposotory
-      uses: actions/checkout@v3
-      -run: cd helloworld && make
-      -run: make cppcheck
-      -run: cd ../gpio && make
-      -run: make cppcheck
+      - name: Checkout the repository
+        uses: actions/checkout@v3
+      - run: cd helloworld && make && make cppcheck
+      - run: cd gpio && make && make cppcheck
+      - run: cd uled-driver && make && make cppcheck
+
+
+

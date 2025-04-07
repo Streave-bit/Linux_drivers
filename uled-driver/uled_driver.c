@@ -51,7 +51,7 @@ static int __init uled_init(void) {
     alloc_chrdev_region(&dev_num, 0, 1, DEVICE_NAME);
     cdev_init(&uled_cdev, &fops);
     cdev_add(&uled_cdev, dev_num, 1);
-    uled_class = class_create(THIS_MODULE, "uled_class");
+    uled_class = class_create("uled_class");
     device_create(uled_class, NULL, dev_num, NULL, DEVICE_NAME);
     pr_info("uled: Module initialized, use /dev/uled\n");
     return 0;

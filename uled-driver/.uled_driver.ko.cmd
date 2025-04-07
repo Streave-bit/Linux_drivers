@@ -1,0 +1,1 @@
+cmd_/home/joseph/Documents/Yocto_RISCV/uled-driver/uled_driver.ko := ld -r  -m elf_x86_64 -z noexecstack   --build-id=sha1  -T scripts/module.lds -o /home/joseph/Documents/Yocto_RISCV/uled-driver/uled_driver.ko /home/joseph/Documents/Yocto_RISCV/uled-driver/uled_driver.o /home/joseph/Documents/Yocto_RISCV/uled-driver/uled_driver.mod.o;  true

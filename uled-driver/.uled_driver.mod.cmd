@@ -1,0 +1,1 @@
+cmd_/home/joseph/Documents/Yocto_RISCV/uled-driver/uled_driver.mod := { echo  /home/joseph/Documents/Yocto_RISCV/uled-driver/uled_driver.o;  echo; } > /home/joseph/Documents/Yocto_RISCV/uled-driver/uled_driver.mod

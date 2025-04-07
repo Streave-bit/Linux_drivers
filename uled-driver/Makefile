@@ -1,4 +1,4 @@
-obj-m += gpio.o
+obj-m += uled_driver.o
 
 CPPCHECK=cppcheck
 
@@ -15,6 +15,8 @@ cppcheck:
 		--enable=all \
 		--error-exitcode=1 \
 		--suppress=missingIncludeSystem \
-		--suppress=unreadVariable \
-		gpio.c
+		uled_driver.c
 
+
+
+	
