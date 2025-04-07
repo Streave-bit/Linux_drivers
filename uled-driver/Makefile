@@ -1,6 +1,7 @@
 obj-m += uled_driver.o
 
-CPPCHECK=cppcheck
+CPPCHECK = cppcheck
+FORMAT = clang-format
 
 KERNEL_DIR = /lib/modules/$(shell uname -r)/build
 
@@ -16,7 +17,8 @@ cppcheck:
 		--error-exitcode=1 \
 		--suppress=missingIncludeSystem \
 		uled_driver.c
-
+format:
+	@$(FORMAT) -i uled_driver.c
 
 
 	

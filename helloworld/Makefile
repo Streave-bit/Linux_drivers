@@ -1,6 +1,7 @@
 obj-m += helloworld.o
 
-CPPCHECK=cppcheck
+CPPCHECK = cppcheck
+FORMAT = clang-format
 
 KERNEL_DIR = /lib/modules/$(shell uname -r)/build
 
@@ -17,3 +18,5 @@ cppcheck:
 		--suppress=missingIncludeSystem \
 		--suppress=unreadVariable \
 		helloworld.c
+format:
+	@$(FORMAT) -i helloworld.c
